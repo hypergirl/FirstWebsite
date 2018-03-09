@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <head>
 <link rel="stylesheet" type="text/css" href="learn.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/hypergirl/FirstWebsite/a0e0efc4/log.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 </head>
