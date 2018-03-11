@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload file </title>    
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+body{
+background:#e6e6e6;
+
+	background-image:url("https://www.tapeciarnia.pl/tapety/normalne/tapeta-slonce-zachodzi-nad-morzem.jpg");
+}
+p
+{
+	font-size:20px;
+
+}
+header
+{
+	
+	background:black;
+	color:white;
+	padding:5px 0px 5px 10px;
+}
+#divider
+{
+	background-color:red;
+	height:4px;
+}
+.main
+{
+
+    border:black 25px;;
+    width:30%;
+    padding:60px;
+    margin-top:10%;
+}
+#myProgress {
+  width: 100%;
+  background-color:#ccc;
+  text-align: left;
+}
+header h1
+{
+	
+	font-family: 'Pacifico', cursive;
+	font-size:50px;
+font-weight:400;
+
+}
+nav ul li
+{
+	display:inline-block;
+	font-size:30px;
+	margin:10px;
+	text-decoration:none;
+	color:white;
+}
+nav ul li a
+{
+	color:white;
+}
+
+.cour h1
+{
+	font-family:'Kaushan Script', cursive;
+	text-align:center;
+	font-size:60px;
+}
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color:green;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+a
+{
+	display:inline-block;
+	font-size:30px;
+	margin:10px;
+	text-decoration:none;
+	color:white;
+}
+ a:hover
+{
+	background-color:red;
+	transition:all 0.5s ease-in;
+	padding:5px;
+}
+</style>
+</head>
+<body>
+<nav>
+<header>
+<center><h1 class="cour">Upload</h1>
+<ul class="a">
+                           <li><a href="index.html">Home</a></li>
+                          <li><a href="about.html">About</a></li>
+                           <li><a href="testimonial.html" target="_self">Testimonials</a></li>
+                           <li><a href="contact.html">Contact Us</a>
+                           
+                  </center>          
+                   </ul>
+                   </header>
+                   </nav>
+<div id="divider"></div>
+
+ <center>
+<div class="main">
+    <h1>Upload your videos,show us your skills.<br>We will evaluate the video and upload to the website</h1>
+    <input type="file" class="upload" id="upload_file" size="50" name="icon" onchange="loadFile(this);" >
+    <hr>
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+</div>
+</center>
+</body>
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC67hSYPeE6DwC5Grak5NHz_bhxKV-ruAg",
+    authDomain: "wingsofeducation-17c14.firebaseapp.com",
+    databaseURL: "https://wingsofeducation-17c14.firebaseio.com",
+    projectId: "wingsofeducation-17c14",
+    storageBucket: "wingsofeducation-17c14.appspot.com",
+    messagingSenderId: "226050416057"
+  };
+  firebase.initializeApp(config);
+function loadFile(input) {
+
+        //Step 1 : Defining element to show the progress
+        var elem = document.getElementById("myBar");    
+        var filetoUpload=input.files[0];
+
+        //Step 2 : Initializing the reference of database with the filename
+        var storageRef = firebase.storage().ref(filetoUpload.name);
+        //Step 3 : Uploading file
+         var task = storageRef.put(filetoUpload);
+        
+        //Step 4 : sata_changed Event
+         // state_changed events occures when file is getting uploaded 
+         //(Note : when we want to show the progress what's the uploading status that time we will use this function.)
+         task.on('state_changed',
+            function progress(snapshot){
+                var percentage = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+                //uploader.value = percentage;
+                 elem.style.width = parseInt(percentage) + '%'; 
+                 elem.innerHTML=parseInt(percentage)+'%';
+            },
+            function error(err){
+
+            },
+            function complete(){
+                var downloadURL = task.snapshot.downloadURL;
+            }
+        ); 
+}
+</script>
+
+</html> 

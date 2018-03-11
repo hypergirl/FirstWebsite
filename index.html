@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="learn.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0/">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="utf-8">
+</head>
+<style>
+
+</style>
+<body>
+
+             <center> <header >
+                <nav class="nav">
+                 <h1 >Wings Of Education</h1>
+                  <ul class="a">
+                     <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                          <li><a href="h.html" target="_self">Course</a></li>
+                           
+                                                        
+                           <li><a href="testimonial.html" target="_self">Testimonials</a></li>
+                   </ul>
+                   
+                  
+    <div id="login_div" class="main-div">
+    
+<h3>Accounts</h3>
+ 
+<input type="email" placeholder="Email..." id="email_field" />
+  <br>  <br>
+<input type="password" placeholder="Password..." id="password_field" />
+
+  <br> <br> 
+
+<button onclick="login()">Login to Account</button>
+  <br>
+<a href="sign.html"><button>Signup to Account</button>
+ </a> 
+ </div>
+</div>
+
+<div id="user_div" class="loggedin-div">
+    
+<h3>Welcome User</h3>
+    
+
+    
+<button onclick="logout()">Logout</button>
+ 
+<a href="upload.html"><button>Upload</button></a> </div>
+
+
+
+ 
+                   
+
+
+         
+
+        
+                   
+                   </ul>
+                  </nav>
+                 </header>
+                 </center>
+               <div id="divider"></div>
+
+               <div class="imag">
+               <br/><br/><br/>
+                  <h1 class="top">Always wanted to follow your passion?</h1>
+                  <h2 class="top"> Then come,</h2>
+                  <h2 class="top">Weave your dream with us</h2>
+
+
+
+               </div>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC67hSYPeE6DwC5Grak5NHz_bhxKV-ruAg",
+    authDomain: "wingsofeducation-17c14.firebaseapp.com",
+    databaseURL: "https://wingsofeducation-17c14.firebaseio.com",
+    projectId: "wingsofeducation-17c14",
+    storageBucket: "wingsofeducation-17c14.appspot.com",
+    messagingSenderId: "226050416057"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="index.js"></script>
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+<title>Contact</title>
+<link rel="stylesheet" type="text/css" href="learn.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8"></head>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+
+<style>
+body
+{
+	margin:0;
+	padding:0;
+	text-align:center;
+	background:linear-gradient(rgba(0,20,0,0.5),rgba(0,20,0,0.5)),url("https://cn.pling.com/img/5/e/6/9/c6b1bb16a588ed35f874726378b90b708ca3.jpg");
+	background-size:cover;
+	min-width:100%;
+	min-height:100%;
+	
+	background-repeat:no-repeat;
+}
+.contacts
+{
+	margin:100px;
+
+	text-transform:uppercase;
+	transition:all 4s ease-in-out;
+}
+.contacts h1
+{
+	font-size:32px;
+	line-height:10px;
+}
+ h2
+{
+	font-size:30px;
+	
+}
+.contact-form
+{
+	margin-top:50px;
+	transition:all 4s ease-in-out;
+	color:black;
+
+}
+.form-control
+{
+	width:600px;
+	height:50px;
+	background:transparent;
+	padding:5px;;
+	border:none;
+	outline:none;
+	border-bottom:1px solid black;
+	font-size:18px;
+	color:black;
+
+}
+.submit
+{
+	background:#ff5722;
+	border-color:transparent;
+	font-size:20px;
+	font-weight:bold;
+	height:50px;
+	margin-top:20px;
+	cursor:pointer;
+
+}
+.alert{
+  text-align: center;
+  padding:10px;
+  background:#79c879;
+  color:#fff;
+  margin-bottom:10px;
+  display:none;
+}
+.con
+{
+  font-size:20px;
+  font-family:'Kaushan Script', cursive;
+  font-weight:400%;
+  font-color:red;
+  width:100%;
+  background-color:blue;
+}
+h3
+{
+  font-size:20px;
+  font-family:'Kaushan Script', cursive;
+  font-weight:400%;
+
+}
+</style>
+
+<body>
+<header>
+<center><h1 class="cour">Contact Us!</h2>
+<div class="contacts">
+<h2>Want additional course?<br> Then mail us</h2>
+</div>
+</center>          
+                
+                   </header>
+<div id="divider"></div>
+
+
+<div class="contact">
+        <h3>Email Us</h3>
+       
+        
+          <p>
+            <label class="con">Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+          </p>
+         
+          <p>
+            <label class="con">Email Address</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+          </p>
+          <p>
+            <label class="con">Phone Number</label>
+            <input type="text" name="phone" class="form-control"id="phone">
+          </p>
+          <p class="full">
+            <label class="con">Message</label>
+            <textarea name="message" rows="5" class="form-control" id="message"></textarea>
+          </p>
+          <p class="full">
+            <button type="submit" Id="submitbtn" class="submit" onClick="fun()">Submit</button>
+          </p>
+        
+      </div>
+    </div>
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC67hSYPeE6DwC5Grak5NHz_bhxKV-ruAg",
+    authDomain: "wingsofeducation-17c14.firebaseapp.com",
+    databaseURL: "https://wingsofeducation-17c14.firebaseio.com",
+    projectId: "wingsofeducation-17c14",
+    storageBucket: "wingsofeducation-17c14.appspot.com",
+    messagingSenderId: "226050416057"
+  };
+  firebase.initializeApp(config);
+function fun()
+{
+var rootRef = firebase.database().ref().child('infos');
+var name = document.getElementById("name").value;
+var email = document.getElementById("email").value;
+var no = document.getElementById("phone").value;
+var message= document.getElementById("message").value;
+  rootRef.set({
+      name:name,
+      mail:email,
+      mobile:no,
+      message:message
+});
+}
+</script>
+</body>
+</html>

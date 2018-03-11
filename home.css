@@ -1,0 +1,145 @@
+body
+{
+	font-family:"Arial";
+	background-color:black;
+	overflow-x:hidden;
+}
+.navbar
+{
+	background-color:green;
+	overflow:hidden;
+	height:100px;
+}
+.about
+   {
+     color:red;
+   }
+.navbar a
+{
+	float:left;
+	display:block;
+	color:#f2f2f2;
+	text-align:center;
+	padding:14px 16px;
+	font-size:17px;
+}
+.navbar ul
+{
+	padding:000;
+	list-style:none;
+}
+.navbar a:hover { 
+    background-color: #ddd;
+    
+}
+.side-nav
+{
+	height:100%;
+	width:0;
+	opacity:0.9;
+	background-color:white;
+	top:0;
+	left:0;
+	position:fixed;
+	z-index:1;
+	overflow-x:hidden;
+	padding-top:60px;
+
+
+}
+.user
+{
+ float:right;
+ text-align:right;
+ margin-right:100%;
+}
+.side-nav a
+{
+	padding:10px 10px 10px 30px;
+	text-decoration:none;
+	font-size:22px;
+	display:block;
+	color:black;
+}
+.side-nav a:hover{
+  color:green;
+}
+.side-nav .close{
+  position:absolute;
+  top:0;
+  right:22px;
+  font-size:36px;
+  margin-left:50px;
+}
+
+@keyframes layer2Anim {
+    0%{opacity:0;}
+    17%{opacity:0;}
+    33%{opacity:1;}
+    50%{opacity:1;}
+    67%{opacity:0;}
+    100%{opacity:0;}
+}
+@keyframes layer3Anim {
+    0%{opacity:0;}
+    50%{opacity:0;}
+    67%{opacity:1;}
+    83%{opacity:1;}
+    100%{opacity:0;}
+}
+@keyframes layer4Anim {
+    0%{opacity:0;}
+    50%{opacity:0;}
+    67%{opacity:1;}
+    83%{opacity:1;}
+    100%{opacity:0;}
+}
+@keyframes layer5Anim {
+    0%{opacity:0;}
+    50%{opacity:0;}
+    67%{opacity:1;}
+    83%{opacity:1;}
+    100%{opacity:0;}
+}
+.slideShow {
+    position: relative;
+    margin-left:28%;
+}
+.placeHolder {
+    width: 100%;
+    visibility: hidden;
+}
+.layer1, .layer2, .layer3,.layer4,.layer5{
+    position: absolute;
+    width:10px;;
+    height:20px;;
+    top: 0;
+    left:0;
+    background-size:auto;
+    min-height:100%;
+    min-width:100%;
+    background-repeat: no-repeat;
+
+}
+.layer1 {
+    background-image: url(w00.jpg);
+     
+    
+    
+}
+.layer2 {
+    background-image: url("https://i.ndtvimg.com/i/2017-03/womens-day_650x400_61488877504.jpg");
+    animation: layer2Anim 10s infinite;
+}
+.layer3 {
+    background-image: url("https://i.amz.mshcdn.com/SGPKi3HExDAApJlshCm_VDZVuKw=/fit-in/850x850/https%3A%2F%2Fmashable.com%2Fwp-content%2Fgallery%2Finternational-womens-day%2Fhillary-clinton.jpg");
+    animation: layer3Anim 20s infinite;
+}
+.layer4 {
+    background-image: url("https://i.pinimg.com/736x/ac/38/48/ac3848fe43badfcb0ccd7b44155f0f07--inspiring-quotes-for-women-famous-women-quotes.jpg");
+    animation: layer4Anim 30s infinite;
+}
+.layer5 {
+    background-image: url("http://www.seiuwest.ca/files/2016/03/Malala.jpg");
+    animation: layer5Anim 40s infinite;
+}
