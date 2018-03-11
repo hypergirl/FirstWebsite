@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  A website that's intended to provide free education for women that wants to explore their passion
+  A website whose motive is to provide free education for women who wants to explore their passion
 </h1>
 
 <h4 align="center">You can check out my website <a href="https://wingsofeducation-17c14.firebaseapp.com">Wings Of Education</a>.</h4>
